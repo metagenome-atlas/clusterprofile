@@ -75,7 +75,7 @@ else:
     elif system=='pbs':
         jobid= res.strip().split('.')[0]
 
-    else:
+    else: # sge
         jobid= int(res.strip().split()[-1])
 
     print(jobid)
