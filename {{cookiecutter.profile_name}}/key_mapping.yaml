@@ -31,11 +31,11 @@ lsf:
     nodes: "-C {}"
     #time: "-W [hh:mm:ss]"
 sge:
-  command: "qsub -terse -V -cwd " # -terse means only the jobid is returned rather than the normal 'Your job...' string # -V means copy environment
+  command: "qsub -terse -V -S /bin/bash -cwd" # -terse means only the jobid is returned rather than the normal 'Your job...' string # -V means copy environment
   key_mapping:
     queue: "-q {}"
       name: "-N {}"
-      threads: "-pe {}"
+      threads: "-pe smp {}"
       mem: '-l h_vmem={}G'
       account: "-A {}"
       time: "-l h_rt={}00"  #min= seconds x 100
